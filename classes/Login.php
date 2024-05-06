@@ -16,6 +16,13 @@ class Login extends DBConnection {
 		echo "<h1>Access Denied</h1> <a href='".base_url."'>Go Back.</a>";
 	}
 	public function login(){
+		if (!isset($_POST['username']) || !isset($_POST['password'])) {
+			return json_encode(array('status'=>'error', 'message'=>'Username or password not provided'));
+		}
+	
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		
 		extract($_POST);
 
 		$qry = $this->conn->query("SELECT * from users where username = '$username' and password = md5('$password')");

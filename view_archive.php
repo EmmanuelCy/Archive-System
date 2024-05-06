@@ -56,10 +56,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                         <legend class="text-navy">Members:</legend>
                         <div class="pl-4"><large><?= isset($members) ? html_entity_decode($members) : "" ?></large></div>
                     </fieldset>
-                    <fieldset>
+                        <fieldset>
                         <legend class="text-navy">Project Document:</legend>
                         <div class="pl-4">
-                            <iframe src="<?= isset($document_path) ? base_url.$document_path : "" ?>" frameborder="0" id="document_field" class="text-center w-100">Loading Document ...</iframe>
+                            <iframe src="<?= isset($document_path) ? base_url.$document_path : "" ?>" frameborder="0" id="document_field" class="text-center w-100" style="filter: blur(5px);">Loading Document ...</iframe>
                         </div>
                     </fieldset>
                 </div>

@@ -225,7 +225,7 @@
             },
             success:function(resp){
                 if(resp.status == 'success'){
-                    location.href= "./login.php"
+                    location.href= "./logins.php"
                 }else if(!!resp.msg){
                     el.text(resp.msg)
                     el.addClass("alert-danger")

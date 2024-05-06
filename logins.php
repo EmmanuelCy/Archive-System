@@ -91,7 +91,7 @@
                             <h4><b>Login</b></h4>
                         </div>
                         <div class="card-body">
-                            <form id="login-frm" action="" method="post">
+                            <form id="slogin-form" action="" method="post">
                                 <div class="input-group mb-3">
                                     <input type="email" class="form-control" id="email" autofocus name="email"
                                         placeholder="Email">
@@ -225,8 +225,8 @@
                         end_loader();
                         $('html, body').animate({
                             scrollTop: 0
-                        }, 'fast');
-                    }
+                        }, 'fast')
+                    },
                 });
             }
         });

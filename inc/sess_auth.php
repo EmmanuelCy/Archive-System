@@ -9,14 +9,7 @@ else
 $link .= "://"; 
 $link .= $_SERVER['HTTP_HOST']; 
 $link .= $_SERVER['REQUEST_URI'];
-// Student
-// if(!strpos($link, 'logins.php') && !strpos($link, 'registration.php') && (!isset($_SESSION['userdata']) || (isset($_SESSION['userdata']['login_type']) && $_SESSION['userdata']['login_type'] != 2)) ){
-// 	redirect('logins.php');
-// }
-// if(strpos($link, 'logins.php') && isset($_SESSION['userdata']['login_type']) && $_SESSION['userdata']['login_type'] == 2){
-// 	redirect('index.php');
-// }
-// Admin
+
 if(!isset($_SESSION['userdata']) && !strpos($link, 'login.php') && !strpos($link, 'register.php')){
 	redirect('admin/login.php');
 }
