@@ -59,7 +59,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                         <fieldset>
                         <legend class="text-navy">Project Document:</legend>
                         <div class="pl-4" style="position: relative;">
-                            <?php if($_settings->userdata('login_type') != "2"): ?>
+                            <?php if($_settings->userdata('login_type') != "2" && $_settings->userdata('login_type') != "1"): ?>
                                 <div class="blur">
                                 </div>
                                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; display: flex; align-items: center; justify-content: center;">
