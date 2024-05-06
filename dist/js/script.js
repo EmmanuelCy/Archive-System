@@ -59,6 +59,7 @@ $.ajax({
                 _frm.find('input').addClass('is-invalid')
                 $('[name="username"]').focus()
             }
+            $('select[name="user_type"]').val('admin')
             console.log("Debug")
             end_loader();
         }

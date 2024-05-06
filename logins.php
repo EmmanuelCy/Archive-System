@@ -132,6 +132,47 @@
                                     <!-- /.col -->
                                 </div>
                             </form>
+                            <form id="login-frm" action="" method="post" style="display: none;">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="username" autofocus name="username"
+                                        placeholder="Email">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-user"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="password" class="form-control" id="a_password" name="a_password"
+                                        placeholder="Password">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-lock"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <select class="form-control" name="user_type">
+                                        <option value="student">Student</option>
+                                        <option value="admin">Admin</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-user-cog"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <a href="register.php" class="ml-2">Create Account</a>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-4">
+                                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -151,40 +192,16 @@
     <script>
     $(document).ready(function() {
         $('select[name="user_type"]').change(function() {
-            var userType = $(this).val();
-            var form = $('#slogin-form, #login-frm');
-            var input = $('input[name="email"], input[name="username"]');
-            var inputValue = $('input[name="email"], input[name="username"]').val();
-
-            if (userType === 'admin') {
-                form.attr('id', 'login-frm');
-                form.attr('action', '');
-                form.attr('method', 'post');
-                input.attr('name', 'username');
-                input.attr('type', 'text');
-                input.attr('placeholder', 'Username');
-            } else if (userType === 'student') {
-                form.attr('id', 'slogin-form');
-                form.attr('action', '');
-                form.attr('method', '');
-                input.attr('name', 'email');
-                input.attr('type', 'email');
-                input.attr('placeholder', 'Email');
+            if ($(this).val() == 'student') {
+                $('#slogin-form').show();
+                $('#login-frm').hide();
+            } else {
+                $('#login-frm').show();
+                $('#slogin-form').hide();
             }
-
-            console.log('------------------------------');
-            console.log('Form Type: ' + userType);
-            console.log('Form id: ' + form.attr('id'));
-            console.log('Form action: ' + form.attr('action'));
-            console.log('Form method: ' + form.attr('method'));
-            console.log('Username input name: ' + input.attr('name'));
-            console.log('Username input type: ' + input.attr('type'));
-            console.log('Username: ' + inputValue)
         });
-
         end_loader();
-        // Registration Form Submit == Student
-        $('#slogin-form, #login-frm').submit(function(e) {
+        $('#slogin-form').submit(function(e) {
             var userType = $('select[name="user_type"]').val();
             if (userType === 'student') {
                 e.preventDefault();

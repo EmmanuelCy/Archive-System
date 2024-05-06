@@ -61,7 +61,6 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                         <div class="pl-4" style="position: relative;">
                             <?php if($_settings->userdata('login_type') != "2"): ?>
                                 <div class="blur">
-                                    <iframe src="<?= isset($document_path) ? base_url.$document_path : "" ?>" frameborder="0" id="document_field" class="text-center w-100" style="filter: blur(10px);";">Loading Document ...</iframe>
                                 </div>
                                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; display: flex; align-items: center; justify-content: center;">
                                     <div class="text-navy">You must be logged in to view the document</div>

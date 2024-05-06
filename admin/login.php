@@ -131,16 +131,6 @@
     <script>
     $(document).ready(function() {
         end_loader();
-        var form = $('#slogin-form, #login-frm');
-        var input = $('input[name="email"], input[name="username"]');
-        var inputValue = $('input[name="email"], input[name="username"]').val();
-        console.log('------------------------------');
-        console.log('Form id: ' + form.attr('id'));
-        console.log('Form action: ' + form.attr('action'));
-        console.log('Form method: ' + form.attr('method'));
-        console.log('Username input name: ' + input.attr('name'));
-        console.log('Username input type: ' + input.attr('type'));
-        console.log('Username: ' + inputValue)
     })
     </script>
 </body>

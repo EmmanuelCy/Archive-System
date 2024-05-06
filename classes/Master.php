@@ -297,12 +297,6 @@ switch ($action) {
 	case 'update_status':
 		echo $Master->update_status();
 	break;
-	case 'save_payment':
-		echo $Master->save_payment();
-	break;
-	case 'delete_payment':
-		echo $Master->delete_payment();
-	break;
 	default:
 		// echo $sysset->index();
 		break;
