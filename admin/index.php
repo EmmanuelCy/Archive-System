@@ -27,7 +27,6 @@
                   include $page.'/index.php';
                 else
                   include $page.'.php';
-
               }
             ?>
           </div>
