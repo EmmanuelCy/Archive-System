@@ -152,7 +152,7 @@
                                     </div>
                                 </div>
                                 <div class="input-group mb-3">
-                                    <select class="form-control" name="user_type">
+                                    <select class="form-control" name="a_user_type">
                                         <option value="student">Student</option>
                                         <option value="admin">Admin</option>
                                     </select>
@@ -191,11 +191,22 @@
 
     <script>
     $(document).ready(function() {
-        $('select[name="user_type"]').change(function() {
+        $('select[name="user_type"], select[name="a_user_type"]').change(function() {
+            var formUser = $('input[name="email"]').val();
+            var formPw = $('input[name="password"]').val();
+            var userType = $(this).val();
+            $('.alert').hide();
+
             if ($(this).val() == 'student') {
+                $('input[name="username"]').val(formUser);
+                $('input[name="a_password"]').val(formPw);
+                $('select[name="user_type"], select[name="a_user_type"]').val(userType);
                 $('#slogin-form').show();
                 $('#login-frm').hide();
             } else {
+                $('input[name="username"]').val(formUser);
+                $('input[name="a_password"]').val(formPw);
+                $('select[name="user_type"], select[name="a_user_type"]').val(userType);
                 $('#login-frm').show();
                 $('#slogin-form').hide();
             }
